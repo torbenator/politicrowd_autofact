@@ -1,34 +1,24 @@
-import urllib2
-#from bs4 import BeautifulSoup
+import requests
 import re
 
 
-
 def query_politifact(terms):
-
     """
     Searches politifact for certain words and returns the search page in raw html
+    
     Parameters:
     ==========
     terms : array of strings. e.g [Sanders, Economy, Debt]
 
     Returns:
     ==========
-    the_page : string of raw html
-
+    page_content: str, string of raw html
     """
 
-    term_string = ''
-    for term in terms:
-        term_string+=term
-        term_string+='+'
-    term_string=term_string[:-1]
-
-    req = urllib2.Request('http://www.politifact.com/search/statements/?q='+term_string)
-
-    response = urllib2.urlopen(req)
-    the_page = response.read()
-    return the_page
+    term_string = '+'.join(terms)
+    url = 'http://www.politifact.com/search/statements/?q=%s' % term_string
+    page = requests.get(url)
+    return page.content
 
 
 def gather_search_items(the_page):
@@ -58,14 +48,14 @@ def digest_search_item(item):
 
     Returns:
     ==========
-    search_item_vars : dictionary of all of the features of the search page.
+    search_item_vars : dict, dictionary of all of the features of the search page.
     Fields are:
-    date : day when statement was made
-    img_url : link to image of politifact meter showing truth value
-    meter_link : link to politifact page about this statement
-    person: person who made statement
-    quote : statement that was made
-    truth_value : Truth value of statement
+        date : day when statement was made
+        img_url : link to image of politifact meter showing truth value
+        meter_link : link to politifact page about this statement
+        person: person who made statement
+        quote : statement that was made
+        truth_value : Truth value of statement
 
     """
     search_item_vars = dict()
@@ -110,4 +100,3 @@ if __name__ == "__main__":
     search_items = gather_search_items(page);
     my_dict = digest_search_item(search_items[3])
     print my_dict.items()
-
