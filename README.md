@@ -1,12 +1,15 @@
-# politicrowd_autofact
-### A Chrome extension for semi-automatically factchecking news articles
+# Politicrowd Autofact
+## A Chrome extension for semi-automatically factchecking news articles
+======
 
 ### About 
+======
 This is a not-for-profit project to build a tool that can help users determine whether content in text articles is correct.
 We are just entering the developmet phase of this tool and a stable version has not been built yet.
 
 
 ### Installing the extension
+======
 1. Clone this repo.
 2. Using the chrome browser, navigate to chrome://extensions
 3. Check the developer mode box.
@@ -15,13 +18,17 @@ We are just entering the developmet phase of this tool and a stable version has 
 
 
 ### Backend python scripts
+======
 The scripts we use to scrape politifact data are included in backend_python_scripts. 
 In the current verions, the user enters a sentence or key words into the text field of our extension and it returns a list of statements from Politifact.
 
 
 ### Goals of the project
+======
 1. Enable the extension to scan sentences on the page without them having to be entered in manually
 2. Develop a more intelligent search algorithm to match sentences to relevant facts.
 
 
 Built by www.politicrowd.com
+
+Please contact us if you would like to get involved.
