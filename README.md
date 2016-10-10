@@ -1,4 +1,4 @@
-# Politicrowd Autofact
+# PolitiCrowd Autofact
 ## A Chrome extension for semi-automatically factchecking news articles
 
 ### About 
