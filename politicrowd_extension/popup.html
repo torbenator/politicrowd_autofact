@@ -3,20 +3,79 @@
   <head>
     <title>PolitiCrowd Factchecker</title>
     <style>
+
     html, body {
     	width: 100%;
     	height: 50%;
     	background-color: #FFF4ED;
-    }
-    #headtext {
-    	font-size: 20px;
-    	font : arial;
-    	color: #898C91
+        color : #595959;
+        font-size: 14;
     }
 
-    #filler {
-    	height: 500;
+    div.header {
+        margin-bottom: 30px;
     }
+
+    h1.headtext {
+    	font-size: 20px;
+    	font : arial;
+
+        text-align : left;
+    }
+
+    div.SearchResult {
+        background-color: #FFF4ED;
+        padding: 5px;
+
+    }
+
+    table.ResultTable {
+        padding-right: 15px;
+        margin-top: 10px;
+
+
+    }
+    img.TruthMeter {
+
+        width: 70px;
+        height: 70px;
+    }
+
+    h3.Person {
+        font-size: 20;
+        text-align: left;
+        margin-top: 0px;
+
+    }
+
+    p.Quote {
+        text-align: left;
+        width: 200px;
+        margin-right: 10px
+
+    }
+
+    p.Date {
+        color : #898C91;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    a.StoryLink{
+        color : #595959;
+        font-size: 14;
+        text-align: right;
+
+    }
+
+
+    p.footText {
+        text-align: right;
+        margin-top: 5px;
+        margin-right: 15px;
+        margin-bottom: 5px;
+    }
+
 
     </style>
 
@@ -24,8 +83,110 @@
 
   </head>
   <body>
-    <h1 id="headtext">PolitiCrowd Autocheck</h1>
-    <input type="text" name="search" id="search">
-    <button id="checkPage">Check this page now!</button>
-  </body>
+    <div class=header>
+
+        <h1 class="headtext">PolitiCrowd AutoFact</h1>
+
+        <input type="text" align="center" name="search" id="search">
+
+        <button id="checkPage">Check this page now!</button>
+
+    </div>
+    <hr>
+        <div class=SearchResult>
+            <table class=ResultTable>
+                <tr>
+                    <th>
+                        <h3 class=Person>
+                            Donald Trump
+                        </h3>
+                        <p class=Quote>
+                            Says Hillary Clinton viciously attacked women abused by Bill Clinton
+                        </p>
+                    </th>
+                    <th>
+                        <img class=TruthMeter src="http://static.politifact.com.s3.amazonaws.com/rulings/tom-mostlyfalse.gif" alt="The claim contains some element of truth, but doesn't tell the full story">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p class=Date>
+                            October 10, 2016
+                        </p>
+                    </th>
+                    <th>
+                            <a class=StoryLink href="http://www.politifact.com/truth-o-meter/statements/2016/oct/10/donald-trump/donald-trump-says-hillary-clinton-viciously-attack/">Full Story</a>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+    <hr>
+        <div class=SearchResult>
+            <table class=ResultTable>
+                <tr>
+                    <th>
+                        <h3 class=Person>
+                            Chain email
+                        </h3>
+                        <p class=Quote>
+                            On Tim Kaine: In exchange for campaign contributions, he appointed a radical jihadi to the Virginia Immigration Commission.
+                        </p>
+                    </th>
+                    <th>
+                        <img class=TruthMeter src="http://static.politifact.com.s3.amazonaws.com/rulings/tom-false.gif" alt="The claim is not accurate">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p class=Date>
+                            October 3, 2016
+                        </p>
+                    </th>
+                    <th>
+                            <a class=StoryLink href="http://www.politifact.com/truth-o-meter/statements/2016/oct/03/chain-email/chain-email-spreads-bogus-claim-kaine-appointed-ra/">Full Story</a>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+    <hr>
+        <div class=SearchResult>
+            <table class=ResultTable>
+                <tr>
+                    <th>
+                        <h3 class=Person>
+                            Tim Kaine
+                        </h3>
+                        <p class=Quote>
+                            Says that during President Barack Obama&rsquo;s tenure, the United States has created 15 million new jobs.
+                        </p>
+                    </th>
+                    <th>
+                        <img class=TruthMeter src="http://static.politifact.com.s3.amazonaws.com/rulings/tom-halftrue.gif" alt="The claim is partly true but leaves out important details or takes things out of context.">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p class=Date>
+                            October 4, 2016
+                        </p>
+                    </th>
+                    <th>
+                            <a class=StoryLink href="http://www.politifact.com/truth-o-meter/statements/2016/oct/04/tim-kaine/tim-kaine-says-during-obama-administration-15-mill/">Full Story</a>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+    <hr>
+    <div class=footer>
+        <p class=footText>
+            Built by PolitiCrowd
+        </p>
+        <p class=footText>
+            10/10/2016
+        </p>
+    <div>
+</body>
 </html>
