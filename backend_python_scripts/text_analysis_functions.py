@@ -30,7 +30,6 @@ def build_text_bank(url='http://www.politifact.com', stop_words=False):
     text = soup.get_text()
     text_tokenize = word_tokenize(text.replace('\n', ' ').replace('-', ' '))
 
-    text_tokenize = word_tokenize(text_replace)
     text_tokenize = [t.lower() for t in text_tokenize]
     text_tokenize = [t for t in text_tokenize if not t.isdigit()]
     if stop_words:
@@ -70,7 +69,7 @@ def filter_wild_text(sentence, text_bank):
 
 if __name__ == "__main__":
 
-    text_bank = build_text_bank(stopwords_csv=True) # make a bank of words using politifact's front bage
+    text_bank = build_text_bank(stop_words=True) # make a bank of words using politifact's front bage
     raw_text = "17 years of interviews reveal trump's penchant for lewd talk" # Headline on cnn.com lol
     words_to_search = filter_wild_text(raw_text, text_bank)
     print(words_to_search)
